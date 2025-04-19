@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 import os
+import gdown
 import urllib.request
 
 FILE_ID = '1igwi6zBQK6MnN-1ACExmTcN-EvhoN0PZ'
@@ -10,8 +11,7 @@ MODEL_URL = f'https://drive.google.com/uc?export=download&id={FILE_ID}'
 MODEL_PATH = 'restaurant_revenue_model.pkl'
 
 if not os.path.exists(MODEL_PATH):
-    with st.spinner('Downloading model...'):
-        urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
+    gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 
 model = joblib.load(MODEL_PATH)
 
