@@ -2,9 +2,17 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import os
+import urllib.request
 
-# Load model
-model = joblib.load("restaurant_revenue_model.pkl")
+MODEL_URL = 'https://drive.google.com/file/d/10iNvgKp9l5w1HC5IjF7JicIAwvuwx9bI/view?usp=drive_link' 
+MODEL_PATH = 'restaurant_revenue_model.pkl'
+
+if not os.path.exists(MODEL_PATH):
+    with st.spinner('Downloading model...'):
+        urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
+
+model = joblib.load(MODEL_PATH)
 
 st.title("Restaurant Revenue Predictor")
 
@@ -26,3 +34,6 @@ if st.button("Predict Revenue"):
     pred_log = model.predict(input_df)[0]
     pred_rev = np.expm1(pred_log)
     st.success(f"Estimated Revenue: ${pred_rev:,.2f}")
+
+
+
