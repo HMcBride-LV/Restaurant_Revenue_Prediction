@@ -13,7 +13,11 @@ MODEL_URL = f'https://drive.google.com/uc?export=download&id={FILE_ID}'
 if not os.path.exists(MODEL_PATH):
     gdown.download(MODEL_URL, MODEL_PATH, quiet=False, fuzzy=True)
 
-model = joblib.load(MODEL_PATH)
+try:
+    model = joblib.load(MODEL_PATH)
+except Exception as e:
+    st.error("❌ Failed to load model.")
+    st.stop()
 
 st.title("Restaurant Revenue Predictor")
 
