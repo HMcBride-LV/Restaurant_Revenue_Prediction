@@ -6,8 +6,8 @@ import os
 import gdown
 
 # File setup
-MODEL_PATH = 'restaurant_revenue_model.pkl'
-FILE_ID = '1Whe1IU92jS_2bUAKWTupVmQiuHw3Uzcn'
+MODEL_PATH = 'restaurant_revenue_deployment.pkl'
+FILE_ID = '10l_VbMipapRP8FbF43erMJI4-PsltAP4'
 MODEL_URL = f'https://drive.google.com/uc?export=download&id={FILE_ID}'
 
 # Download model if not already present
