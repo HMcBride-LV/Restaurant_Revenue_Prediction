@@ -7,7 +7,7 @@ import gdown
 import urllib.request
 
 MODEL_PATH = 'restaurant_revenue_model.pkl'
-FILE_ID = '1igwi6zBQK6MnN-1ACExmTcN-EvhoN0PZ'
+FILE_ID = '1B7kbdayQlRjQu9VT6VKCQUWlIU1MI1M8'
 MODEL_URL = f'https://drive.google.com/uc?export=download&id={FILE_ID}'
 
 if not os.path.exists(MODEL_PATH):
