@@ -5,7 +5,7 @@ import joblib
 import os
 import urllib.request
 
-FILE_ID = 1igwi6zBQK6MnN-1ACExmTcN-EvhoN0PZ
+FILE_ID = '1igwi6zBQK6MnN-1ACExmTcN-EvhoN0PZ'
 MODEL_URL = f'https://drive.google.com/uc?export=download&id={FILE_ID}'
 MODEL_PATH = 'restaurant_revenue_model.pkl'
 
