@@ -5,7 +5,7 @@ import joblib
 import os
 import urllib.request
 
-MODEL_URL = 'https://drive.google.com/file/d/10iNvgKp9l5w1HC5IjF7JicIAwvuwx9bI/view?usp=drive_link' 
+MODEL_URL = "https://drive.google.com/uc?export=download&id=10iNvgKp9l5w1HC5IjF7JicIAwvuwx9bI"
 MODEL_PATH = 'restaurant_revenue_model.pkl'
 
 if not os.path.exists(MODEL_PATH):
